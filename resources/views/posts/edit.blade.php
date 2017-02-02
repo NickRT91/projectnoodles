@@ -33,7 +33,7 @@
 					</div>
 
 					<div class="col-sm-6">
-					{!! Html::linkRoute('posts.update', 'Save Changes', array($post->id), array('class' => 'btn btn-success btn-block')) !!}
+					{{ Form::submit('Save Changes', array('class' => 'btn btn-success btn-block')) }}
 					</div>
 				</div>
 			</div>
