@@ -1,11 +1,5 @@
 <?php
 
- /* ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
- ## This file is a part of Project Noodles                ##
- ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ##
- ## Project Noodles is licenced under the GPLv3 licence.  ##
- ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## */
-
 return [
 
     /*
