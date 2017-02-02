@@ -4,12 +4,12 @@
 
 @section('content')
 	<div class="row">
-		{{ Form::model($post, ['route' => ['posts.update', $post->id]]) }}
+		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
 		<div class="col-md-8">
 			{{ Form::label('title', 'Title:') }}
-			{{ form::text('title', null, ['class' => 'form-control input-lg']) }}
+			{{ Form::text('title', null, ["class" => 'form-control input-lg']) }}
 			
-			{{ Form::label('body', 'Body:', ['class' => 'form-spacing-top']) }}
+			{{ Form::label('body', "Body:", ['class' => 'form-spacing-top']) }}
 			{{ Form::textarea('body', null, ['class' => 'form-control']) }}
 		</div>
 
@@ -26,18 +26,17 @@
 				</dl>
 
 				<hr>
-
 				<div class="row">
 					<div class="col-sm-6">
-					{!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+						{!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
 					</div>
-
 					<div class="col-sm-6">
-					{{ Form::submit('Save Changes', array('class' => 'btn btn-success btn-block')) }}
+						{{ Form::submit('Save Changes', ['class' => 'btn btn-success btn-block']) }}
 					</div>
 				</div>
+
 			</div>
 		</div>
 		{!! Form::close() !!}
-	</div> <!-- end of .row -->
+	</div>	<!-- end of .row (form) -->
 @stop
