@@ -2,15 +2,19 @@
 
 @section('title')Edit Post &bull; {{ config('app.name') }}@stop
 
+@section('stylesheets')
+	{!! Html::style('/css/parsley.css') !!}
+@stop
+
 @section('content')
 	<div class="row">
-		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
+		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
 		<div class="col-md-8">
 			{{ Form::label('title', 'Title:') }}
-			{{ Form::text('title', null, ["class" => 'form-control input-lg']) }}
+			{{ Form::text('title', null, ["class" => 'form-control input-lg', 'required' => '', 'maxlength' => '255']) }}
 			
 			{{ Form::label('body', "Body:", ['class' => 'form-spacing-top']) }}
-			{{ Form::textarea('body', null, ['class' => 'form-control']) }}
+			{{ Form::textarea('body', null, ['class' => 'form-control', 'required' => '']) }}
 		</div>
 
 		<div class="col-md-4">
@@ -39,4 +43,8 @@
 		</div>
 		{!! Form::close() !!}
 	</div>	<!-- end of .row (form) -->
+@stop
+
+@section('scripts')
+	{!! Html::script('/js/parsley.min.js') !!}
 @stop
