@@ -13,13 +13,18 @@
 		<div class="col-md-4">
 			<div class="well">
 				<dl>
-					<dt>Created at</dt>
-					<dd>{{ date('l j\'S F, Y - h:ia e', strtotime($post->created_at)) }}</dd>
+					<label>URL</label>
+					<p><a href="{{ route('blog.single', $post->slug) }}">{{ route('blog.single', $post->slug) }}</a></p>
 				</dl>
 
 				<dl>
-					<dt>Last updated</dt>
-					<dd>{{ date('l j\'S F, Y - h:ia e', strtotime($post->updated_at)) }}</dd>
+					<label>Created at</label>
+					<p>{{ date('j\'S M Y - h:ia', strtotime($post->created_at)) }}</p>
+				</dl>
+
+				<dl>
+					<label>Last updated</label>
+					<p>{{ date('j\'S M Y - h:ia', strtotime($post->updated_at)) }}</p>
 				</dl>
 
 				<hr>

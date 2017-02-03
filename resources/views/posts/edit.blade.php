@@ -8,13 +8,17 @@
 
 @section('content')
 	<div class="row">
-		{!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'data-parsley-validate' => '']) !!}
+		{!! Form::model($post, array('route' => array('posts.update', $post->id), 'method' => 'PUT', 'data-parsley-validate' => '')) !!}
+
 		<div class="col-md-8">
 			{{ Form::label('title', 'Title:') }}
-			{{ Form::text('title', null, ["class" => 'form-control input-lg', 'required' => '', 'maxlength' => '255']) }}
+			{{ Form::text('title', null, array("class" => 'form-control input-lg', 'required' => '', 'maxlength' => '255')) }}
+
+			{{ Form::label('slug', 'Slug:', array("class" => 'form-spacing-top')) }}
+			{{ Form::text('slug', null, array("class" => 'form-control', 'required' => '5', 'maxlength' => '255')) }}
 			
-			{{ Form::label('body', "Body:", ['class' => 'form-spacing-top']) }}
-			{{ Form::textarea('body', null, ['class' => 'form-control', 'required' => '']) }}
+			{{ Form::label('body', 'Body:', array('class' => 'form-spacing-top')) }}
+			{{ Form::textarea('body', null, array('class' => 'form-control', 'required' => '')) }}
 		</div>
 
 		<div class="col-md-4">
@@ -35,7 +39,7 @@
 						{!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
 					</div>
 					<div class="col-sm-6">
-						{{ Form::submit('Save Changes', ['class' => 'btn btn-success btn-block']) }}
+						{{ Form::submit('Save Changes', array('class' => 'btn btn-success btn-block')) }}
 					</div>
 				</div>
 
