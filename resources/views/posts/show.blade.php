@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title')Show Post &bull; {{ config('app.name') }}@stop
+@section('title'){{ $post->title }} &bull; {{ config('app.name') }}@stop
 
 @section('content')
 	<div class="row">
