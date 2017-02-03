@@ -3,21 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PagesController extends Controller
 {
     // Get Index
     public function getIndex() {
-    	return view('pages.welcome');
+        $posts = Post::orderBy('created_at', 'desc')->limit(4)->get();
+    	return view('pages.welcome')->withPosts($posts);
     }
 
     // Get About
     public function getAbout() {
-    	$first = 'Nick';
-    	$last = 'Taylor';
+    	$first = 'John';
+    	$last = 'Doe';
 
 		$fullname = $first . " " . $last;
-		$email = 'nick@wrekin.net';
+		$email = 'hello@example.com';
 		$data = [];
 		$data['email'] = $email;
 		$data['fullname'] = $fullname;

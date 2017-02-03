@@ -13,35 +13,15 @@
 
         <div class="row">
             <div class="col-md-8">
+                @foreach($posts as $post)
                 <div class="post">
-                    <h3>Post Title 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet mi vel velit placerat, id facilisis purus sagittis. Phasellus vulputate nibh ligula. Nullam luctus, nulla vitae vehicula vestibulum, dolor diam efficitur est, id rhoncus mi quam quis nulla. Nulla mollis nisl turpis, id imperdiet nisl pellentesque sed.</p>
+                    <h3>{{ $post->title }}</h3>
+                    <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
                     <a href="#" class="btn btn-primary">Read More</a>
                 </div>
 
                 <hr>
-
-                <div class="post">
-                    <h3>Post Title 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet mi vel velit placerat, id facilisis purus sagittis. Phasellus vulputate nibh ligula. Nullam luctus, nulla vitae vehicula vestibulum, dolor diam efficitur est, id rhoncus mi quam quis nulla. Nulla mollis nisl turpis, id imperdiet nisl pellentesque sed.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-
-                <hr>
-
-                <div class="post">
-                    <h3>Post Title 3</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet mi vel velit placerat, id facilisis purus sagittis. Phasellus vulputate nibh ligula. Nullam luctus, nulla vitae vehicula vestibulum, dolor diam efficitur est, id rhoncus mi quam quis nulla. Nulla mollis nisl turpis, id imperdiet nisl pellentesque sed.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-
-                <hr>
-
-                <div class="post">
-                    <h3>Post Title 4</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet mi vel velit placerat, id facilisis purus sagittis. Phasellus vulputate nibh ligula. Nullam luctus, nulla vitae vehicula vestibulum, dolor diam efficitur est, id rhoncus mi quam quis nulla. Nulla mollis nisl turpis, id imperdiet nisl pellentesque sed.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div> <!-- End of post section-->
+                @endforeach
             </div>
 
             <div class="col-md-3 col-md-offset-1">

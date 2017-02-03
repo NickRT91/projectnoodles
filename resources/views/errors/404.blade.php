@@ -59,10 +59,15 @@
 	<div class="container">
 
 	<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-	<h1 class="text-center">404 Page Not Found.</h1>
-	</div>
-	</div>
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h1>Error 404: Page Not Found</h1>
+                <p class="lead">Sorry to say that the page or post you was looking for wasn't found.</p>
+                <p class="lead">Please use the button below to return to the home page.</p>
+                <p><a class="btn btn-primary btn-lg" href="{{ url('/') }}" role="button">Return to Home</a></p>
+            </div>
+        </div>
+    </div> <!-- End of header .row -->
 
 	<hr>
 
